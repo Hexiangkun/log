@@ -28,6 +28,7 @@ private:
 };
 
 
+
 class LogFile : nocopyable
 {
 public:

@@ -1,4 +1,4 @@
-#include "../code/log/log.h"
+#include "../log/log.h"
 
 #include <thread>
 #include <vector>

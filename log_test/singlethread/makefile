@@ -1,6 +1,7 @@
 target = single_thread
 
-objs = /home/hxk/C++Project/C++11webserver/code/log/*.cpp /home/hxk/C++Project/C++11webserver/test/log/singlethread/singlethread.cpp
+objs = /home/hxk/git_project/log/log/*.cpp \
+	/home/hxk/git_project/log/log_test/singlethread/singlethread.cpp
 
 $(target) : $(objs)
 	$(CXX) $(objs) -o $(target)

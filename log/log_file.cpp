@@ -31,10 +31,12 @@ off_t FileWriter::get_written_bytes() const
 
 void FileWriter::append(const char* line,size_t len)//将给定长度的字符串写入文件缓冲区
 {
-    size_t n = ::fwrite(line, 1,len, _file);    //写入_buffer缓冲区
+    // size_t n = ::fwrite(line, 1,len, _file);    //写入_buffer缓冲区
+    size_t n = ::fwrite_unlocked(line, 1,len, _file);
     size_t remain = len-n;
     while(remain){
-        size_t x = fwrite(line+n, 1, remain, _file);
+        // size_t x = fwrite(line+n, 1, remain, _file);
+        size_t x = fwrite_unlocked(line+n, 1, remain, _file);
         if(x == 0){
             int err = ferror(_file);
             if(err){
